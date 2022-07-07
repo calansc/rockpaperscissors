@@ -22,32 +22,25 @@ function playRound(playerSelection, computerSelection) {
     if (pS === cS) {
         return ("It's a tie!");
         
-    }
-    else if (pS === 'rock' & cS === 'scissors') {
+    } else if (pS === 'rock' & cS === 'scissors') {
         return ('You Win! Rock beats Scissors');
-    }
-    else if (pS === 'rock' & cS === 'paper') {
+    } else if (pS === 'rock' & cS === 'paper') {
         return ('You Lose! Paper beats Rock');
-    }
-    else if (pS === 'paper' & cS === 'rock') {
+    } else if (pS === 'paper' & cS === 'rock') {
         return ('You Win! Paper beats Rock');
-    }
-    else if (pS === 'paper' & cS === 'scissors') {
+    } else if (pS === 'paper' & cS === 'scissors') {
         return ('You Lose! Scissors beats Paper');
-    }
-    else if (pS === 'scissors' & cS === 'paper') {
+    } else if (pS === 'scissors' & cS === 'paper') {
         return ('You Win! Scissors beats Paper');
-    }
-    else if (pS === 'scissors' & cS === 'rock') {
+    } else if (pS === 'scissors' & cS === 'rock') {
         return ('You Lose! Rock beats Scissors');
-    }
-    else return ('Please choose Rock, Paper, or Scissors')
+    } else return ('Please choose Rock, Paper, or Scissors')
 }
 
 function game() {
     for (let i=0; i < 5; i++) {
        if (i < 5) {
-        let playerSelection = prompt('Choose your RPS');
+        let playerSelection = prompt('Choose Rock, Paper, or Scissors');
         result = playRound(playerSelection, computerPlay())
         }
        if (result.includes('Win')) {
@@ -58,15 +51,14 @@ function game() {
         console.log(result);
         console.log(playerScore);
         console.log(computerScore);
-        
-       
     }
+
     if (playerScore > computerScore) {
         return ('You Win best of 5');
     } else if (playerScore < computerScore) {
         return ('You Lose best of 5');
     } else return ('Best of 5 tie!');
-    
+   
 }
 
 let playerScore = 0;
@@ -77,3 +69,4 @@ let computerSelection = computerPlay();
 //const computerSelection = computerPlay();
 //console.log(playRound(playerSelection, computerSelection));
 //console.log(game());
+game();
