@@ -69,4 +69,3 @@ let computerSelection = computerPlay();
 //const computerSelection = computerPlay();
 //console.log(playRound(playerSelection, computerSelection));
 //console.log(game());
-game();
