@@ -52,13 +52,13 @@ function game() {
         console.log(playerScore);
         console.log(computerScore);
     }
-
     if (playerScore > computerScore) {
-        return ('You Win best of 5');
+        console.log ('You Win best of 5');
     } else if (playerScore < computerScore) {
-        return ('You Lose best of 5');
-    } else return ('Best of 5 tie!');
-   
+        console.log ('You Lose best of 5');
+    } else console.log ('Best of 5 tie!');
+
+
 }
 
 let playerScore = 0;
@@ -69,3 +69,4 @@ let computerSelection = computerPlay();
 //const computerSelection = computerPlay();
 //console.log(playRound(playerSelection, computerSelection));
 //console.log(game());
+game();
