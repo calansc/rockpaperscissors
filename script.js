@@ -37,38 +37,16 @@ function playRound(playerSelection, computerSelection) {
     } else return ('Please choose Rock, Paper, or Scissors')
 }
 
+const results = document.querySelector('#results');
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let playerSelection = button.id;
         result = playRound(playerSelection, computerPlay())
         console.log(result);
+        results.textContent = result;
     });
 });
-
-// const rock = document.querySelector('#rock');
-// rock.addEventListener('click', () => {
-//     //console.log('rock');
-//     let playerSelection = 'rock';
-//     result = playRound(playerSelection, computerPlay());
-//     console.log(result);
-// });
-
-// const paper = document.querySelector('#paper');
-// paper.addEventListener('click', () => {
-//     //console.log('paper');
-//     let playerSelection = 'paper';
-//     result = playRound(playerSelection, computerPlay());
-//     console.log(result);
-// });
-
-// const scissors = document.querySelector('#scissors');
-// scissors.addEventListener('click', () => {
-//     //console.log('scissors');
-//     let playerSelection = 'scissors';
-//     result = playRound(playerSelection, computerPlay());
-//     console.log(result);
-// });
 
 
 // function game() { 
