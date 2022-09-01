@@ -2,13 +2,13 @@
 function computerPlay () {
     const play = (Math.floor(Math.random()*3+1));
     if (play === 3) {
-        return ('Rock');
+        return ('rock');
     }
     else if (play === 2) {
-        return ('Paper');
+        return ('paper');
     }
     else if (play === 1) {
-        return ('Scissors');
+        return ('scissors');
     }
     else return ('An error has occured, number outside of 1-3');
     };
@@ -36,37 +36,61 @@ function playRound(playerSelection, computerSelection) {
         return ('You Lose! Rock beats Scissors');
     } else return ('Please choose Rock, Paper, or Scissors')
 }
+const score = document.querySelector('#score');
 
-function game() {
-    for (let i=0; i < 5; i++) {
-       if (i < 5) {
-        let playerSelection = prompt('Choose Rock, Paper, or Scissors');
-        result = playRound(playerSelection, computerPlay())
-        }
-       if (result.includes('Win')) {
-            playerScore = playerScore + 1;
-        } else if (result.includes('Lose')) {
-            computerScore = computerScore + 1
-        }
-        console.log(result);
-        console.log(playerScore);
-        console.log(computerScore);
-    }
-    if (playerScore > computerScore) {
-        console.log ('You Win best of 5');
-    } else if (playerScore < computerScore) {
-        console.log ('You Lose best of 5');
-    } else console.log ('Best of 5 tie!');
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    //console.log('rock');
+    let playerSelection = 'rock';
+    result = playRound(playerSelection, computerPlay());
+    console.log(result);
+});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    //console.log('paper');
+    let playerSelection = 'paper';
+    result = playRound(playerSelection, computerPlay());
+    console.log(result);
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    //console.log('scissors');
+    let playerSelection = 'scissors';
+    result = playRound(playerSelection, computerPlay());
+    console.log(result);
+});
 
 
-}
+// function game() { 
+//     for (let i=0; i < 5; i++) {
+//        if (i < 5) {
+//         let playerSelection = prompt('Choose Rock, Paper, or Scissors');
+//         result = playRound(playerSelection, computerPlay())
+//         }
+//        if (result.includes('Win')) {
+//             playerScore = playerScore + 1;
+//         } else if (result.includes('Lose')) {
+//             computerScore = computerScore + 1
+//         }
+//         console.log(result);
+//         console.log(playerScore);
+//         console.log(computerScore);
+//     }
+//     if (playerScore > computerScore) {
+//         console.log ('You Win best of 5');
+//     } else if (playerScore < computerScore) {
+//         console.log ('You Lose best of 5');
+//     } else console.log ('Best of 5 tie!');
+// }
 
-let playerScore = 0;
-let computerScore = 0;
+// let playerScore = 0;
+// let computerScore = 0;
 
-//const playerSelection = 'rock';
-let computerSelection = computerPlay();
-//const computerSelection = computerPlay();
-//console.log(playRound(playerSelection, computerSelection));
-//console.log(game());
-game();
+// //const playerSelection = 'rock';
+// let computerSelection = computerPlay();
+// //const computerSelection = computerPlay();
+// //console.log(playRound(playerSelection, computerSelection));
+// //console.log(game());
+// game();
