@@ -35,19 +35,48 @@ function playRound(playerSelection, computerSelection) {
     } else if (pS === 'scissors' & cS === 'rock') {
         return ('You Lose! Rock beats Scissors');
     } else return ('Please choose Rock, Paper, or Scissors')
-}
+};
 
+function scoreCount(result) {
+    //console.log(result);
+    if (result.includes('Win')) {
+        pScore++;
+    } else if (result.includes('Lose')) {
+        cScore++;
+    }
+    if (pScore == 5) {
+        winner.textContent = 'You win the game of 5!';
+    } else if (cScore == 5) {
+        winner.textContent = 'You lose the game of 5!';
+    }
+};
+
+let pScore = 0;
+let cScore = 0;
+const reset= document.querySelector('#reset');
+const winner = document.querySelector('#winner');
+const playerScore = document.querySelector('#playerscore');
+const computerScore = document.querySelector('#computerscore');
 const results = document.querySelector('#results');
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.choice');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let playerSelection = button.id;
         result = playRound(playerSelection, computerPlay())
-        console.log(result);
         results.textContent = result;
+        scoreCount(result);
+        playerScore.textContent = "Player Score " + pScore;
+        computerScore.textContent = "Computer Score " + cScore;
     });
 });
-
+reset.addEventListener('click', () => {
+    pScore = 0
+    cScore = 0
+    playerScore.textContent = "";
+    computerScore.textContent = "";
+    results.textContent = "";
+    winner.textContent = "";
+});
 
 // function game() { 
 //     for (let i=0; i < 5; i++) {
